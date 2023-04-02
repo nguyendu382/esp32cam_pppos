@@ -1,3 +1,8 @@
+
+// ESP32CAM - A7670C
+// Nguyen Van Du (nguyendu382@gmail.com)
+// 2023
+
 #include "Arduino.h"
 #include "esp_camera.h"
 #include "SPI.h"
@@ -10,7 +15,7 @@
 #include <ArduinoHttpClient.h>
 
 #define GSM_SERIAL          1
-#define GSM_RX              2      // ESP32 TX - SIM RX 16  --- DO NOT USE PORT 4 because it is used by the camera
+#define GSM_RX              2       // ESP32 TX - SIM RX 16  --- DO NOT USE IO16 because it is used by the camera
 #define GSM_TX              14      // ESP32 RX - SIM TX 14
 #define GSM_POWER           15      // GSM Power Enable 15
 #define GSM_BR              115200  // Baudrate
@@ -27,7 +32,7 @@ String serverPath = "/upload.php";     // The default serverPath should be uploa
 const int serverPort = 80;
 
 const int CHUNK_SIZE = 1024;  // Maximum LTE RX size is 1500 bytes
-const int MAX_FILE_SIZE = 10000; // Maximum LTE Memory handle ??
+const int MAX_FILE_SIZE = 20000; // -- bytes Maximum LTE Memory handle ???
 const int POST_TIME_OUT = 10000;
 
 PPPOSClient espClient;
@@ -266,12 +271,13 @@ void initCamera()
   config.xclk_freq_hz = 20000000;
   config.pixel_format = PIXFORMAT_JPEG;
   
+  // frame_size should not excceed LTE module RX capacity ???
   if(psramFound()){ //check if pseudo ram is available
-    config.frame_size = FRAMESIZE_SVGA;
+    config.frame_size = FRAMESIZE_VGA; // VGA: 640 x 480
     config.jpeg_quality = 10;
     config.fb_count = 2;
   } else {
-    config.frame_size = FRAMESIZE_VGA;
+    config.frame_size = FRAMESIZE_HVGA; // HVGA: 480 x 320
     config.jpeg_quality = 12;
     config.fb_count = 1;
   }
@@ -358,7 +364,7 @@ void sendPhoto(void) {
   }
   
   Serial.println("Connecting to server: " + serverName);
-  mClient.publish(msgTopic, "Connecting to server");
+  mClient.publish(msgTopic, "Connecting to server...");
   
   if (hClient.connect(serverName.c_str(), serverPort)) {
     Serial.println("Connection successful!");
@@ -367,6 +373,13 @@ void sendPhoto(void) {
     String tail = "\r\n--RandomNerdTutorials--\r\n";
 
     uint32_t imageLen = fb->len;
+
+    if (imageLen > MAX_FILE_SIZE)
+    {
+      Serial.println("Image size exceeds " + MAX_FILE_SIZE);
+      return;        
+    }      
+    
     uint32_t extraLen = head.length() + tail.length();
     uint32_t totalLen = imageLen + extraLen;
 
