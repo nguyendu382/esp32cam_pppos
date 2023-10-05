@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net" modified="2023-10-05T07:33:45.821Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="zeKgyEfOp5aTibuKgxkp" version="22.0.2" type="github">
+  <diagram name="Trang-1" id="bEk9-DfaInAAnTzv4F3k">
+    <mxGraphModel dx="1434" dy="750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="EIHDTuP3wSGr4i3WDV5Z-25" value="Query" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="EIHDTuP3wSGr4i3WDV5Z-1" target="EIHDTuP3wSGr4i3WDV5Z-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EIHDTuP3wSGr4i3WDV5Z-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="EIHDTuP3wSGr4i3WDV5Z-1" target="EIHDTuP3wSGr4i3WDV5Z-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="352" y="400" />
+              <mxPoint x="205" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EIHDTuP3wSGr4i3WDV5Z-1" value="OAEventService" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="272" y="280" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="EIHDTuP3wSGr4i3WDV5Z-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.425;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="EIHDTuP3wSGr4i3WDV5Z-2" target="EIHDTuP3wSGr4i3WDV5Z-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="240" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="280" y="180" />
+              <mxPoint x="280" y="240" />
+              <mxPoint x="340" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EIHDTuP3wSGr4i3WDV5Z-2" value="Alarm Event" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="230" y="130" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EIHDTuP3wSGr4i3WDV5Z-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EIHDTuP3wSGr4i3WDV5Z-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="280" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="414" y="240" />
+              <mxPoint x="360" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EIHDTuP3wSGr4i3WDV5Z-4" value="Periodic" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="359" y="130" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EIHDTuP3wSGr4i3WDV5Z-9" value="Print" style="html=1;whiteSpace=wrap;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
+          <mxGeometry x="150" y="510" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EIHDTuP3wSGr4i3WDV5Z-10" value="Email" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="414" y="510" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EIHDTuP3wSGr4i3WDV5Z-11" value="SMS" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="547" y="510" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EIHDTuP3wSGr4i3WDV5Z-20" value="- Config&lt;br&gt;-Start/Stop Service" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="60" y="285" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="EIHDTuP3wSGr4i3WDV5Z-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="EIHDTuP3wSGr4i3WDV5Z-20" target="EIHDTuP3wSGr4i3WDV5Z-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EIHDTuP3wSGr4i3WDV5Z-23" value="DS/HIS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="537" y="295" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EIHDTuP3wSGr4i3WDV5Z-27" value="Logs" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="280" y="510" width="110" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
